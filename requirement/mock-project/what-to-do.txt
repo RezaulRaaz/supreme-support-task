@@ -1,0 +1,31 @@
+We want to check your basic capability in:
+1. Database design
+2. Server side scripting (PHP or Node)
+3. Front-end scripting (html, css, javascript; React / Vue / jQuery / any other as your choice. We will like the modern ones )
+4. Sense on UI, UX
+
+
+What you need to do:
+1. check the attached sample data in csv
+2. Give option to add these data from an interface.
+3. List this data with a good interface. (You can dump the csv data)
+4. Option to view detail of an item in a popup.
+5. Give option to edit the data
+6. Option to Search / Filter  by title, address, zip etc
+7. Option to filter items that have address nearby 50 km (of a  zip or address input). may be using google map api or any other technique.
+
+
+Notes:
+
+It is not mandatory to do all tasks.
+However, it will be considered as your capability as much tasks you can complete.
+If you want, you can add some more options using your creativity and idea. That will be considered as a plus.
+
+
+Please try to submit your work as early as possible (preferably, before 12:30 PM 05/09/2022, Dhaka time).
+We know you have work at your current job.  Still, we will consider how much early you can send it.
+
+Please send your work on a zip, online url or git address as reply to this email.
+You can contact us if you have any query. 
+
+
