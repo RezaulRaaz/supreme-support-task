@@ -24,7 +24,7 @@ function DataList({ list,handleDelete}) {
                                 <td>
                                     <Link to='/edit' state={{data:value}} className='badge bg-primary badge-primary'>Edit</Link> &nbsp;
                                     <Link to='/details' state={{data:value}} className='badge bg-success badge-success'>Details</Link> &nbsp;
-                                    <a href='{() => false}' onClick={()=>handleDelete(value)} className='badge bg-danger badge-danger'>x</a>
+                                    <a href='#' onClick={()=>handleDelete(value)} className='badge bg-danger badge-danger'>x</a>
                                 </td>
                             </tr>
                         ))

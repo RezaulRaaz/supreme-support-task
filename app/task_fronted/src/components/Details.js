@@ -18,17 +18,15 @@ function Details() {
 
 
     //get 50km location data from server
-    const loadDistaceData = async () => {
+    const loadDistaceData = () => {
         const url = Api.data_get_location_distance;
         const values = {
             'lat': Location.lat,
             'lng': Location.lng,
             'id': Location.id,
         }
-        await Axios.post(url, values).then((res) => {
-            console.log(res)
+         Axios.post(url, values).then((res) => {
             setDistanceLocation(res.data.data);
-            console.log(DistanceLocation)
         });
     }
 
