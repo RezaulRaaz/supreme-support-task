@@ -24,4 +24,5 @@ Route::get('single_location_data/{id}',[FrontendDataController::class,'single_lo
 Route::post('data/store',[FrontendDataController::class,'store']);
 Route::post('data/update',[FrontendDataController::class,'update']);
 Route::get('data/delete/{id}',[FrontendDataController::class,'delete']);
+Route::post('data/location/distance',[FrontendDataController::class,'distance']);
 

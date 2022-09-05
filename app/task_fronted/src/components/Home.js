@@ -11,13 +11,13 @@ import './../App.css';
 import { toast } from 'react-toastify';
 import Spinner from 'react-bootstrap/Spinner';
 function Home() {
-    //bootstrap modal show close
-    const [editable, setEditable] = useState(false);
     const [Location, setLocation] = useState([]);
+    //bootstrap modal show close
     const [query, setQuery] = useState([]);
     const [DataSave, setDataSave] = useState(false);
 
 
+    
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -126,7 +126,7 @@ function Home() {
                 keyboard={false}
             >
                 <Modal.Header closeButton>
-                    <Modal.Title>{editable ? 'Edit Data' : 'Add Data'}</Modal.Title>
+                    <Modal.Title>Add Data</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <form onSubmit={handleSubmit}>

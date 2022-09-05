@@ -14,7 +14,7 @@ function EditData(props) {
 
     const location = useLocation();
     const data = location.state.data;
-    const [Location, setLocation] = useState(data);
+    const [Location] = useState(data);
 
     const backToHome = ()=>{
         navigate("/", { replace: true });

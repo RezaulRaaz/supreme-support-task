@@ -131,4 +131,55 @@ class FrontendDataController extends Controller
 
         return response()->json('Data Not Deleted Successfuly', 500);
     }
+
+    public function distance(Request $request){
+        $fromLat=$request->lat;
+        $fromLong=$request->lng;
+        $id=$request->id;
+
+
+        // $fromLat='-41.1109041';
+        // $fromLong='146.8376087';
+        // $id=328222;
+        $locations=LocationData::all()->except($id);
+        $location_list=[];
+        foreach($locations as $location){
+            $toLat=$location->lat;
+            $toLng=$location->lng;
+
+            $km =$this->distanceCalculate($toLat,$toLng,$fromLat,$fromLong,"K");
+            if($km <= 50){
+                $data=[
+                    'location'=>$location,
+                    'km'=>$km
+                ];
+                array_push($location_list,$data);
+            }
+
+        }
+        $response = [
+            'success' => true,
+            'data' => $location_list,
+            'message' => '',
+        ];
+        return response()->json($response, 200);
+    }
+
+    function distanceCalculate($lat1, $lon1, $lat2, $lon2, $unit) {
+
+        $theta = $lon1 - $lon2;
+        $dist = sin(deg2rad($lat1)) * sin(deg2rad($lat2)) +  cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * cos(deg2rad($theta));
+        $dist = acos($dist);
+        $dist = rad2deg($dist);
+        $miles = $dist * 60 * 1.1515;
+        $unit = strtoupper($unit);
+
+        if ($unit == "K") {
+            return round($miles * 1.609344);
+        } else if ($unit == "N") {
+            return round($miles * 0.8684);
+        } else {
+            return round($miles);
+        }
+      }
 }

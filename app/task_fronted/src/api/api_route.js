@@ -5,6 +5,7 @@ const Api = {
     data_get_single_location_url:BaseUrl+'single_location_data', //with id parameter ---get route
     data_update:BaseUrl+'data/update', //update route ---post route
     data_location_delete:BaseUrl+'data/delete', //delete route with id parameter ---get route
+    data_get_location_distance:BaseUrl+'data/location/distance', //body should have (lat,lng,id)  ---post route
 }
 
 export default Api;
